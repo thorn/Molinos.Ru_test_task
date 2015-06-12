@@ -64,7 +64,9 @@ end
 
 gem 'haml-rails'
 gem 'devise'
-
+# version with rspec3 compatible tests
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: 'c2ee2e8'
+gem 'rmagick'
 gem 'ancestry'
 
 # Angularjs

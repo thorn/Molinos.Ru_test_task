@@ -17,6 +17,11 @@ FactoryGirl.define do
     slug 'slug'
   end
 
+  factory :photo do
+    image ''
+    main false
+  end
+
   sequence(:name) do |n|
     "name_#{n}"
   end
