@@ -68,6 +68,7 @@ gem 'devise'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: 'c2ee2e8'
 gem 'rmagick'
 gem 'ancestry'
+gem 'ransack'
 
 # Angularjs
 gem 'rails-assets-angular'
