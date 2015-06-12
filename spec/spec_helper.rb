@@ -1,4 +1,6 @@
+require 'rails/all'
 require 'rspec/rails'
+require 'devise'
 require 'support/request_helper'
 require 'shoulda/matchers'
 require 'factory_girl'
