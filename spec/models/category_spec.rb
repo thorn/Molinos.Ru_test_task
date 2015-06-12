@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Category do
   let(:user) { FactoryGirl.create(:user) }
-  let(:attr) { { name: "Category", editable: true, user_id: user.id } }
+  let(:attr) { { name: "Category", editable: true } }
 
   it 'creates a record with valid attributes' do
     expect do
@@ -11,7 +11,6 @@ describe Category do
   end
 
   describe 'associations' do
-    it { should belong_to(:user) }
     it { should have_many(:items) }
   end
 
@@ -21,8 +20,8 @@ describe Category do
 
   describe 'ancestry' do
     it 'assigns parent record' do
-      cat1 = FactoryGirl.create(:category, user: user)
-      cat2 = FactoryGirl.create(:category, user: user, parent_id: cat1.id)
+      cat1 = FactoryGirl.create(:category)
+      cat2 = FactoryGirl.create(:category, parent_id: cat1.id)
       expect(cat2.parent).to eq(cat1)
     end
   end

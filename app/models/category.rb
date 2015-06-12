@@ -3,5 +3,4 @@ class Category < ActiveRecord::Base
 
   has_ancestry
   has_many :items
-  belongs_to :user
 end

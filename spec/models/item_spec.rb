@@ -12,11 +12,6 @@ describe Item do
 
   describe 'associations' do
     it { should belong_to(:category) }
-
-    it 'gets user from category delegate' do
-      item = FactoryGirl.create(:item, category: category)
-      expect(item.user).to eq(category.user)
-    end
   end
 
   describe 'validations' do

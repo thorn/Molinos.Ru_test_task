@@ -7,7 +7,6 @@ FactoryGirl.define do
 
   factory :category do
     name
-    user
     editable true
   end
 
