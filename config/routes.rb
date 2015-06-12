@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   get '/templates/:controller_name/:id' => "templates#show"
 
+  namespace :api, defaults: { format: 'json' } do
+    namespace :v1 do
+      resources :categories, only: [:index, :show, :create, :update, :destroy]
+    end
+  end
+
   root 'application#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
