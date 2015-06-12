@@ -5,6 +5,16 @@ FactoryGirl.define do
     password_confirmation 'password'
   end
 
+  factory :category do
+    name
+    user
+    editable true
+  end
+
+  sequence(:name) do |n|
+    "name_#{n}"
+  end
+
   sequence(:email) do |n|
     "user_#{n}@example.com"
   end

@@ -65,6 +65,8 @@ end
 gem 'haml-rails'
 gem 'devise'
 
+gem 'ancestry'
+
 # Angularjs
 gem 'rails-assets-angular'
 gem 'rails-assets-angular-animate'
