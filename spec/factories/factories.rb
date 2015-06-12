@@ -11,6 +11,13 @@ FactoryGirl.define do
     editable true
   end
 
+  factory :item do
+    name
+    description "Item description"
+    category
+    slug 'slug'
+  end
+
   sequence(:name) do |n|
     "name_#{n}"
   end

@@ -12,6 +12,7 @@ describe Category do
 
   describe 'associations' do
     it { should belong_to(:user) }
+    it { should have_many(:items) }
   end
 
   describe 'validations' do
