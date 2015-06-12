@@ -22,3 +22,4 @@ config/secrets.yml
 
 /bin/*
 /db/*.sqlite3
+/public/uploads/*

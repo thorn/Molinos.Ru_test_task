@@ -20,6 +20,7 @@ FactoryGirl.define do
   factory :photo do
     image ''
     main false
+    item
   end
 
   sequence(:name) do |n|

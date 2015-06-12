@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :categories, only: [:index, :show, :create, :update, :destroy]
       resources :items, only: [:index, :show, :create, :update, :destroy]
+      resources :photos, only: [:create, :destroy]
     end
   end
 
