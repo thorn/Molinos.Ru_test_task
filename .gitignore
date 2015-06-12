@@ -11,3 +11,14 @@
 /log/*
 !/log/.keep
 /tmp
+
+.ruby-version
+.ruby-gemset
+
+config/database.yml
+config/secrets.yml
+
+.rspec
+
+/bin/*
+/db/*.sqlite3

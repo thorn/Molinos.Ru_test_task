@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
-gem 'pg'
+# gem 'pg'
+gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,6 +40,40 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # gem 'spring'
+  gem 'pry-rails'
+  gem 'pry-theme'
+  gem 'pry-byebug'
 end
 
+group :development do
+  gem 'thin'
+  gem 'quiet_assets'
+  gem 'guard-rspec'
+  gem 'annotate'
+  gem 'awesome_print', require: 'ap'
+  gem 'meta_request'
+  gem 'zeus'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', require: false
+  gem 'shoulda-matchers', require: false
+end
+
+gem 'haml-rails'
+gem 'devise'
+
+# Angularjs
+gem 'rails-assets-angular'
+gem 'rails-assets-angular-animate'
+gem 'rails-assets-angular-resource'
+gem 'rails-assets-angular-ui'
+gem 'rails-assets-angular-ui-router'
+gem 'rails-assets-angular-ui-utils'
+gem 'rails-assets-angular-scroll'
+gem 'angular-ui-bootstrap-rails'
+
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
