@@ -10,9 +10,8 @@
     #nav-collapse.collapse.navbar-collapse
       - if signed_in?
         %ul.nav.navbar-nav
-          %li
-            %a
-              %i.icon-document
+          %li(ng-class="{active: state.current.data.feature == 'items'}")
+            %a(ui-sref="items.list")
               Товары и категории
       - if signed_in?
         %ul.nav.navbar-nav.navbar-right
