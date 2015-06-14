@@ -25,7 +25,7 @@ class Api::V1::ItemsController < Api::BaseController
     private
 
     def find_items
-      @search = Item.includes(:category).order(created_at: :desc).search(params[:q])
+      @search = Item.includes(:category).order(created_at: :asc).search(params[:q])
       @items = @search.result
     end
 
@@ -55,7 +55,7 @@ class Api::V1::ItemsController < Api::BaseController
     end
 
     def item_params
-      params.require(:item).permit(:name, :parent_id)
+      params.require(:item).permit(:name, :description, :category_id, photo_ids: [])
     end
 
 end

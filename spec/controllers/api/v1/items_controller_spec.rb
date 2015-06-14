@@ -42,6 +42,12 @@ describe Api::V1::ItemsController do
       post :create, item: attr.merge(name: nil)
       expect(response).to have_http_status(:unprocessable_entity)
     end
+
+    it 'adds photos to item' do
+      photo = FactoryGirl.create(:photo)
+      post :create, item: attr.merge(photo_ids: [photo.id])
+      expect(assigns(:item).photos).to include(photo)
+    end
   end
 
   describe 'PATCH "update"' do
