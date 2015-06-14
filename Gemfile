@@ -72,14 +72,19 @@ gem 'ransack'
 
 # Angularjs
 gem 'rails-assets-angular'
-gem 'rails-assets-angular-animate'
 gem 'rails-assets-angular-resource'
-gem 'rails-assets-angular-ui'
 gem 'rails-assets-angular-ui-router'
-gem 'rails-assets-angular-ui-utils'
-gem 'rails-assets-angular-scroll'
 gem 'rails-assets-angular-ui-tree'
+gem 'rails-assets-angular-input-masks'
+gem 'rails-assets-ng-file-upload'
 gem 'angular-ui-bootstrap-rails'
+
+gem 'rails-assets-nprogress'
 
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
+
+# gem 'rails-assets-angular-animate'
+# gem 'rails-assets-angular-ui'
+# gem 'rails-assets-angular-ui-utils'
+# gem 'rails-assets-angular-scroll'

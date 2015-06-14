@@ -199,19 +199,15 @@ GEM
       railties (= 4.2.1)
       sprockets-rails
     rails-assets-angular (1.4.0)
-    rails-assets-angular-animate (1.4.0)
-      rails-assets-angular (= 1.4.0)
+    rails-assets-angular-input-masks (1.2.5)
     rails-assets-angular-resource (1.4.0)
       rails-assets-angular (= 1.4.0)
-    rails-assets-angular-scroll (0.7.1)
-      rails-assets-angular (>= 1.2.16, < 2)
-    rails-assets-angular-ui (0.4.0)
     rails-assets-angular-ui-router (0.2.15)
       rails-assets-angular (>= 1.0.8)
     rails-assets-angular-ui-tree (2.5.0)
       rails-assets-angular (>= 1.2.0)
-    rails-assets-angular-ui-utils (0.2.3)
-      rails-assets-angular (>= 1.0.2)
+    rails-assets-ng-file-upload (5.0.5)
+    rails-assets-nprogress (0.2.0)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.6)
@@ -335,13 +331,12 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.2.1)
   rails-assets-angular
-  rails-assets-angular-animate
+  rails-assets-angular-input-masks
   rails-assets-angular-resource
-  rails-assets-angular-scroll
-  rails-assets-angular-ui
   rails-assets-angular-ui-router
   rails-assets-angular-ui-tree
-  rails-assets-angular-ui-utils
+  rails-assets-ng-file-upload
+  rails-assets-nprogress
   ransack
   rmagick
   rspec-rails
