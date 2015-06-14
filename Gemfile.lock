@@ -208,6 +208,8 @@ GEM
     rails-assets-angular-ui (0.4.0)
     rails-assets-angular-ui-router (0.2.15)
       rails-assets-angular (>= 1.0.8)
+    rails-assets-angular-ui-tree (2.5.0)
+      rails-assets-angular (>= 1.2.0)
     rails-assets-angular-ui-utils (0.2.3)
       rails-assets-angular (>= 1.0.2)
     rails-deprecated_sanitizer (1.0.3)
@@ -338,6 +340,7 @@ DEPENDENCIES
   rails-assets-angular-scroll
   rails-assets-angular-ui
   rails-assets-angular-ui-router
+  rails-assets-angular-ui-tree
   rails-assets-angular-ui-utils
   ransack
   rmagick

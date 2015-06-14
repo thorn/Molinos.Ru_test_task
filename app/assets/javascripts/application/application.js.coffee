@@ -1,3 +1,4 @@
+#= require ./common/common
 #= require ./categories/categories
 #= require ./items/items
 #= require ./routes

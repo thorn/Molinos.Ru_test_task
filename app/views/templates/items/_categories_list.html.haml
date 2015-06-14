@@ -1,1 +1,7 @@
-%h1 Categories List
+%a(ng-click="selected(null)" href="") Все товары
+%button.btn.btn-default(ng-if="categories.length == 0")
+  Add Category
+
+#tree-root(ui-tree ng-if="categories.length > 0")
+  %ol(ui-tree-nodes ng-model="categories")
+    %li(ng-repeat="node in categories" ui-tree-node ng-include="'/templates/categories/nodes_renderer.html'")

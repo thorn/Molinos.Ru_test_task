@@ -25,7 +25,7 @@ class Api::V1::CategoriesController < Api::BaseController
     private
 
     def find_root_categories
-      @categories = Category.roots.order(created_at: :desc)
+      @categories = Category.roots.order(created_at: :asc)
     end
 
     def find_category

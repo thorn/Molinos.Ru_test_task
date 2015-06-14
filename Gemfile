@@ -78,6 +78,7 @@ gem 'rails-assets-angular-ui'
 gem 'rails-assets-angular-ui-router'
 gem 'rails-assets-angular-ui-utils'
 gem 'rails-assets-angular-scroll'
+gem 'rails-assets-angular-ui-tree'
 gem 'angular-ui-bootstrap-rails'
 
 gem 'bootstrap-sass'
