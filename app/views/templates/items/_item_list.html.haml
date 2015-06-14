@@ -1,1 +1,18 @@
-%h1 Items Table
+%h1 Товары
+%button.btn.btn-primary(ng-click="editItem('new')") Новый товар
+%table.table.table-bordered(ng-show="items.length > 0")
+  %thead
+    %th Название
+    %th Цена
+    %th Действия
+  %tbody
+    %tr(ng-repeat="item in items")
+      %td {{item.name}}
+      %td {{item.price}}
+      %td
+        %a(ui-sref="items.show({id: item.id})") Посмотреть
+        %a(ng-click="editItem(item)") Изменить
+        %a(ng-click="deleteItem(item)") Удалить
+%h2(ng-show="items.length == 0")
+  Нет товаров
+  %span(ng-show="current_state.category") в данной категории

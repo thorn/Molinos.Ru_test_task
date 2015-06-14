@@ -17,22 +17,25 @@ describe 'Item API' do
         "name" => item1.name,
         "description" => item1.description,
         "price" => sprintf('%.2f', item1.price),
-        "category_id" =>item1.category_id
+        "category_id" => item1.category_id,
+        "photos" => []
       },
       {
         "id" => item2.id,
         "name" => item2.name,
         "description" => item2.description,
         "price" => sprintf('%.2f', item2.price),
-        "category_id" =>item2.category_id
+        "category_id" => item2.category_id,
+        "photos" => []
       }
     ])
   end
 
   it 'should create an item and respond with it' do
     category = FactoryGirl.create(:category)
-    attr = { name: "New Item", description: "item description", category_id: category.id }
+    attr = { name: "New Item", description: "item description", price: 10.12, category_id: category.id }
     post '/api/v1/items', item: attr
     expect(json.keys).to include("id", "name", "description", "category_id", "price")
+    expect(json.values).to include("New Item", "item description", category.id, "10.12")
   end
 end

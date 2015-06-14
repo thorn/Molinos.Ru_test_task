@@ -2,12 +2,35 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'font-awesome';
+@import 'nprogress';
+
+.photo_small {
+  width: 100px;
+}
+
+.photo_small img {
+  width: 100px;
+}
+
+.item_photo {
+  max-width: 500px;
+}
+
+a {
+  cursor: pointer;
+}
 
 .tree-node {
   background: #f8faff;
   border: 1px solid #dae2ea;
   color: #7c9eb2;
   padding: 10px 10px;
+}
+.tree-node.active {
+  background: #d8dadf;
+}
+.tree-node.active:hover {
+  background: #d8dadf;
 }
 
 .tree-node a {

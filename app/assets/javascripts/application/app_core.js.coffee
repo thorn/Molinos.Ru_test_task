@@ -1,1 +1,1 @@
-window.app = angular.module('app', ['ui.router', 'ui.tree', 'ngResource'])
+window.app = angular.module('app', ['ui.router', 'ui.tree', 'ui.bootstrap', 'ngResource', 'ui.utils.masks', 'ngFileUpload'])

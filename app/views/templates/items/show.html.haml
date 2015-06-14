@@ -1,0 +1,18 @@
+%ol.breadcrumb
+  %li
+    %a(ui-sref="items.list") Товары и категории
+  %li.active
+    {{item.name}}
+
+%h1
+  {{item.name}}
+  %span.small {{item.price}} руб.
+.row
+  .col-md-4
+    %h2 Описание
+    %pre {{item.description}}
+  .col-md-8
+    %h2 Фотографии
+
+    %div(ng-repeat="photo in item.photos")
+      %img.thumbnail.item_photo(ng-src="{{photo.image_url}}")

@@ -19,6 +19,13 @@ window.routes =
     data:
       feature: 'items'
 
+  "items.show":
+    url:         '/:id'
+    templateUrl: '/templates/items/show.html'
+    controller: 'appItemCtrl'
+    data:
+      feature: 'items'
+
 window.app.config ($stateProvider, $urlRouterProvider) ->
   $urlRouterProvider.otherwise("/items/")
   for route, params of window.routes

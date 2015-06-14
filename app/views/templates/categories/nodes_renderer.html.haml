@@ -1,4 +1,4 @@
-.tree-node.tree-node-content
+.tree-node.tree-node-content(ng-class="{ active: current_state.category && current_state.category.id == node.id }")
   %span(ui-tree-handle)
     %i.glyphicon.glyphicon-option-vertical
   %a(ng-if="node.sub_categories && node.sub_categories.length > 0" data-nodrag ng-click="toggle(this)")
