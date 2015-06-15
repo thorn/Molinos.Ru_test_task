@@ -1,0 +1,13 @@
+#= require jquery
+#= require jquery_ujs
+#= require bootstrap
+#= require nprogress
+#= require angular
+#= require ng-file-upload
+#= require angular-input-masks
+#= require angular-resource
+#= require angular-ui-bootstrap-tpls
+#= require angular-ui-router
+#= require angular-ui-tree
+#= require application/app_core
+#= require application/application

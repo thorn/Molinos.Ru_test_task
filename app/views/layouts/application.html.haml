@@ -1,0 +1,11 @@
+!!!
+%html(ng-app='app')
+  %head
+    %title Molinos
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body(ng-controller="appApplicationCtrl")
+    = render 'navigation'
+    .container
+      = yield

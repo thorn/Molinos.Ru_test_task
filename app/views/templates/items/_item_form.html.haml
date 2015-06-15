@@ -1,0 +1,35 @@
+.modal-header
+  %button.close(type="button" ng-click="cancel()" aria-hidden="true")
+    &times;
+  %h4.modal-title(ng-hide="item.id") Новый товар
+  %h4.modal-title(ng-show="item.id") Изменение товара {{itemBackup.name}}
+.modal-body
+  %form(name="new_item")
+    .form-group
+      %label(for="item[name]") Название
+      %input.form-control(type="text" name="item[name]" ng-model="item.name")
+    .form-group
+      %label(for="item[description]") Описание
+      %textarea.form-control(type="text" name="item[description]" ng-model="item.description")
+
+    .form-group
+      %label(for="item[category_id]") Категория
+      %select(name="item[category_id]" ng-model="item.category_id" ng-options="category.id as category.name for category in current_state.allCategories")
+
+    .form-group
+      %label(for="item[price]") Цена
+      %input.form-control(type="text" name="item[price]" ng-model="item.price" ui-money-mask)
+
+    .form-group
+      %form
+        %input(type="file" ngf-select ngf-multiple="true" ngf-accept="'image/*'" ngf-keep-distinct="true" ngf-change="upload($files)" accept="image/*")
+
+    .form-group
+      %div.photo_small.thumbnail(ng-repeat="photo in item.photos")
+        %button.close(type="button" data-dismiss="alert" aria-label="Close" ng-click="delete(photo)")
+          %span(aria-hidden="true")= "&times;".html_safe
+        %img(ng-src="{{photo.image_url}}")
+
+.modal-footer
+  %button.btn.btn-default(ng-click="cancel()") Отмена
+  %button.btn.btn-primary(ng-disabled="!new_item.$valid" ng-click="ok()") Сохранить

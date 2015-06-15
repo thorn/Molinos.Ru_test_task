@@ -1,0 +1,14 @@
+.tree-node.tree-node-content(ng-class="{ active: current_state.category && current_state.category.id == node.id }")
+  %span(ui-tree-handle)
+    %i.glyphicon.glyphicon-option-vertical
+  %a(ng-if="node.sub_categories && node.sub_categories.length > 0" data-nodrag ng-click="toggle(this)")
+    %span.glyphicon{ "ng-class" => "{ |
+        'glyphicon-plus': collapsed, |
+        'glyphicon-minus': !collapsed}"}
+  %a(ng-click="selected(node)") {{node.name}}
+  %a.pull-right.btn.btn-danger.btn-xs(data-nodrag ng-click="deleteCategory(node)")
+    %span.glyphicon.glyphicon-remove
+  %a.pull-right.btn.btn-primary.btn-xs(data-nodrag ng-click="editCategory(node)" style="margin-right: 8px;")
+    %span.glyphicon.glyphicon-pencil
+%ol(ui-tree-nodes="" ng-model="node.sub_categories" ng-class="{hidden: collapsed}")
+  %li(ng-repeat="node in node.sub_categories" ui-tree-node ng-include="'/templates/categories/nodes_renderer.html'")

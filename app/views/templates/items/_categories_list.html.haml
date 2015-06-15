@@ -1,0 +1,9 @@
+%h1 Категории
+%a.btn.btn-primary(ng-click="selected(null)" href="") Все товары
+%button.btn.btn-default(ng-click="editCategory('new')")
+  Новая категория
+
+
+#tree-root(ui-tree="treeOptions" ng-if="categories.length > 0")
+  %ol(ui-tree-nodes ng-model="categories")
+    %li(ng-repeat="node in categories" ui-tree-node ng-include="'/templates/categories/nodes_renderer.html'")
