@@ -24,4 +24,16 @@ describe 'Categories API' do
       }
     ])
   end
+
+  it 'should delete category' do
+    cat = FactoryGirl.create(:category)
+    delete "/api/v1/categories/#{cat.id}"
+    expect(json).to eq(
+      {
+        "id" => cat.id,
+        "name" => cat.name,
+        "sub_categories" => []
+      }
+    )
+  end
 end

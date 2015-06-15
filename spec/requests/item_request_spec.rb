@@ -8,25 +8,28 @@ describe 'Item API' do
 
   it 'should render category with it\'s children' do
     cat = FactoryGirl.create(:category)
-    item1 = FactoryGirl.create(:item, name: 'First item')
+    item1 = FactoryGirl.create(:item, name: 'First item', category: nil)
     item2 = FactoryGirl.create(:item, name: 'Second item', category_id: cat.id)
     get '/api/v1/items'
     expect(json).to eq([
-      {
-        "id" => item1.id,
-        "name" => item1.name,
-        "description" => item1.description,
-        "price" => sprintf('%.2f', item1.price),
-        "category_id" => item1.category_id,
-        "photos" => []
-      },
       {
         "id" => item2.id,
         "name" => item2.name,
         "description" => item2.description,
         "price" => sprintf('%.2f', item2.price),
         "category_id" => item2.category_id,
-        "photos" => []
+        "photos" => [],
+        "photo_ids" =>[],
+        "category" => { "id" => cat.id, "name" => cat.name, "sub_categories" => [] }
+      },
+      {
+        "id" => item1.id,
+        "name" => item1.name,
+        "description" => item1.description,
+        "price" => sprintf('%.2f', item1.price),
+        "category_id" => item1.category_id,
+        "photos"=>[],
+        "photo_ids" => []
       }
     ])
   end

@@ -52,10 +52,12 @@ describe Api::V1::CategoriesController do
   end
 
   describe 'DELETE "destroy"' do
-    it 'deletes a record' do
-      category
+    it 'deletes record but does not deletes children' do
+      child_category = FactoryGirl.create(:category, parent_id: category.id)
       expect do
         delete :destroy, id: category.id
+        child_category.reload
+        expect(child_category.parent).to eq(nil)
       end.to change{ Category.count }.by(-1)
     end
   end

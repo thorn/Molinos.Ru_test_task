@@ -1,0 +1,17 @@
+.modal-header
+  %button.close(type="button" ng-click="cancel()" aria-hidden="true")
+    &times;
+  %h4.modal-title(ng-hide="category.id") Новый товар
+  %h4.modal-title(ng-show="category.id") Изменение товара {{categoryBackup.name}}
+.modal-body
+  %form(name="new_category")
+    .form-group
+      %label(for="category[name]") Название
+      %input.form-control(type="text" name="category[name]" ng-model="category.name")
+    .form-group
+      %label(for="category[parent_id]") Родительская категория
+      %select(name="category[parent_id]" ng-model="category.parent_id" ng-options="category.id as category.name for category in current_state.allCategories")
+
+.modal-footer
+  %button.btn.btn-default(ng-click="cancel()") Отмена
+  %button.btn.btn-primary(ng-disabled="!new_category.$valid" ng-click="ok()") Сохранить
