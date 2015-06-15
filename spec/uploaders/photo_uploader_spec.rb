@@ -7,7 +7,7 @@ describe PhotoUploader do
   include CarrierWave::Test::Matchers
 
   before do
-    @photo = FactoryGirl.create(:photo)
+    @photo = FactoryGirl.create(:photo, image: fixture_file_upload('image.jpeg', 'image/jpeg', :binary))
     PhotoUploader.enable_processing = true
     @uploader = PhotoUploader.new(@photo, :image)
 

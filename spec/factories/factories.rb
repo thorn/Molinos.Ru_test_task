@@ -18,7 +18,7 @@ FactoryGirl.define do
   end
 
   factory :photo do
-    image ''
+    image 'image.png'
     main false
     item
   end

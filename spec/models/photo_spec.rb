@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 describe Photo do
+  include ActionDispatch::TestProcess
   let(:item) { FactoryGirl.create(:item) }
-  let(:attr) { { image: 'image_path.png', main: true, item_id: item.id } }
+  let(:attr) { { image: fixture_file_upload('image.jpeg', 'image/jpeg', :binary), main: true, item_id: item.id } }
 
   it 'should create photo with valid attributes' do
     expect do
-      Photo.create(attr)
+      Photo.create!(attr)
     end.to change{ Photo.count }.by(1)
   end
 

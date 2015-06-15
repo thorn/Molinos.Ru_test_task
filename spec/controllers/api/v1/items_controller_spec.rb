@@ -31,6 +31,7 @@ describe Api::V1::ItemsController do
   end
 
   describe 'POST "create"' do
+    let(:file) { fixture_file_upload('image.jpeg', 'image/jpeg', :binary) }
     it 'creates a item' do
       item
       expect do
@@ -44,7 +45,7 @@ describe Api::V1::ItemsController do
     end
 
     it 'adds photos to item' do
-      photo = FactoryGirl.create(:photo)
+      photo = FactoryGirl.create(:photo, image: file)
       post :create, item: attr.merge(photo_ids: [photo.id])
       expect(assigns(:item).photos).to include(photo)
     end
