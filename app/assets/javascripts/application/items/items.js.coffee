@@ -56,7 +56,7 @@ window.app.controller 'appItemsCtrl', ['$scope', '$rootScope', 'Item', 'CurrentS
   $scope.saveItem = (item) ->
     if item.id
       item.$update (data) ->
-        $rootScope.$emit 'items.edited', data
+        console.log data
       , (data) ->
         $rootScope.$emit 'alert', 'Неверные данные', 'error'
         item.$get()
@@ -67,6 +67,13 @@ window.app.controller 'appItemsCtrl', ['$scope', '$rootScope', 'Item', 'CurrentS
         $rootScope.$emit 'items.saved', data
       , (data) ->
         $rootScope.$emit 'alert', 'Не удалось сохранить товар', 'error'
+
+  $scope.deleteItem = (item) ->
+    item.$delete (data) ->
+      $scope.items.splice($scope.items.indexOf(item))
+      console.log data
+    , (data) ->
+      $rootScope.$emit 'alert', 'Не удалось удалить товар', 'error'
 
   $scope.$watch 'current_state.category', (category = {}) ->
     console.log(category)
