@@ -70,7 +70,7 @@ window.app.controller 'appItemsCtrl', ['$scope', '$rootScope', 'Item', 'CurrentS
 
   $scope.deleteItem = (item) ->
     item.$delete (data) ->
-      $scope.items.splice($scope.items.indexOf(item))
+      $scope.items.splice($scope.items.indexOf(item), 1)
       console.log data
     , (data) ->
       $rootScope.$emit 'alert', 'Не удалось удалить товар', 'error'
