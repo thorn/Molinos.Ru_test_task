@@ -10,7 +10,7 @@
       %td {{item.name}}
       %td {{item.price}}
       %td
-        %a(ui-sref="items.show({id: item.id})") Посмотреть
+        %a(ui-sref="admin_items.show({id: item.id})") Посмотреть
         %a(ng-click="editItem(item)") Изменить
         %a(ng-click="deleteItem(item)") Удалить
 %h2(ng-show="items.length == 0")

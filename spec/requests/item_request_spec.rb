@@ -41,4 +41,12 @@ describe 'Item API' do
     expect(json.keys).to include("id", "name", "description", "category_id", "price")
     expect(json.values).to include("New Item", "item description", category.id, "10.12")
   end
+
+  describe 'Public item api' do
+    it 'should include slug in response' do
+      item = FactoryGirl.create(:item, slug: 'slug')
+      get "/items/#{item.id}"
+      expect(json["slug"]).to eq('slug')
+    end
+  end
 end

@@ -4,12 +4,12 @@ window.app.factory 'Item',  ['$resource', ($resource) ->
   )
 ]
 
-window.app.controller 'appItemCtrl', ['$scope', '$rootScope', 'Item', 'CurrentState', '$modal', 'Upload', '$http', '$state', ($scope, $rootScope, Item, CurrentState, $modal, Upload, $http, $state) ->
+window.app.controller 'appAdminItemCtrl', ['$scope', 'Item', '$state', ($scope, Item, $state) ->
   $scope.state = $state.params
   $scope.item = Item.get(id: $state.params.id)
 ]
 
-window.app.controller 'appItemsCtrl', ['$scope', '$rootScope', 'Item', 'CurrentState', '$modal', 'Upload', '$http', ($scope, $rootScope, Item, CurrentState, $modal, Upload, $http) ->
+window.app.controller 'appAdminItemsCtrl', ['$scope', '$rootScope', 'Item', 'CurrentState', '$modal', 'Upload', '$http', ($scope, $rootScope, Item, CurrentState, $modal, Upload, $http) ->
   $scope.current_state = CurrentState
 
   $scope.items = []
@@ -36,7 +36,7 @@ window.app.controller 'appItemsCtrl', ['$scope', '$rootScope', 'Item', 'CurrentS
 
   $scope.showForm = ->
     modalInstance = $modal.open
-      templateUrl: '/templates/items/_item_form.html'
+      templateUrl: '/templates/admin_items/_item_form.html'
       scope: $scope
       controller: ($scope, $modalInstance) ->
         $scope.shouldBeOpen = true
