@@ -40,7 +40,8 @@ window.routes =
     data:
       feature: 'items'
 
-window.app.config ($stateProvider, $urlRouterProvider) ->
-  $urlRouterProvider.otherwise("/items/")
+window.app.config ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
+  $urlRouterProvider.otherwise("/items")
   for route, params of window.routes
     $stateProvider.state route, params
+]

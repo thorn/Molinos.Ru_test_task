@@ -50,7 +50,7 @@ window.app.controller 'appCategoriesCtrl', ['$scope', 'Category', 'CurrentState'
     modalInstance = $modal.open
       templateUrl: '/templates/categories/_category_form.html'
       scope: $scope
-      controller: ($scope, $modalInstance) ->
+      controller: ['$scope', '$modalInstance', ($scope, $modalInstance) ->
         $scope.shouldBeOpen = true
 
         $scope.ok = ->
@@ -58,6 +58,7 @@ window.app.controller 'appCategoriesCtrl', ['$scope', 'Category', 'CurrentState'
 
         $scope.cancel = ->
           $modalInstance.dismiss('cancel')
+      ]
 
     modalInstance.result.then (category) ->
       $scope.saveCategory(category)

@@ -38,7 +38,7 @@ window.app.controller 'appAdminItemsCtrl', ['$scope', '$rootScope', 'Item', 'Cur
     modalInstance = $modal.open
       templateUrl: '/templates/admin_items/_item_form.html'
       scope: $scope
-      controller: ($scope, $modalInstance) ->
+      controller: ['$scope', '$modalInstance', ($scope, $modalInstance) ->
         $scope.shouldBeOpen = true
 
         $scope.ok = ->
@@ -46,6 +46,7 @@ window.app.controller 'appAdminItemsCtrl', ['$scope', '$rootScope', 'Item', 'Cur
 
         $scope.cancel = ->
           $modalInstance.dismiss('cancel')
+      ]
 
     modalInstance.result.then (item) ->
       $scope.saveItem(item)
