@@ -89,3 +89,13 @@ gem 'font-awesome-sass'
 # gem 'rails-assets-angular-ui'
 # gem 'rails-assets-angular-ui-utils'
 # gem 'rails-assets-angular-scroll'
+
+# deployment
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-rails-console'
+gem 'capistrano-rvm'
+gem 'capistrano-unicorn-nginx', '~> 3.2.0'
+
+gem 'unicorn'
