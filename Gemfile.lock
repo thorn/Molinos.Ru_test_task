@@ -59,6 +59,7 @@ GEM
       execjs
       json
     awesome_print (1.6.1)
+    babosa (1.0.2)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -102,6 +103,8 @@ GEM
     font-awesome-sass (4.3.2.1)
       sass (~> 3.2)
     formatador (0.2.5)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     guard (2.12.6)
@@ -313,6 +316,7 @@ DEPENDENCIES
   angular-ui-bootstrap-rails
   annotate
   awesome_print
+  babosa
   bootstrap-sass
   byebug
   carrierwave!
@@ -320,6 +324,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   font-awesome-sass
+  friendly_id
   guard-rspec
   haml-rails
   jbuilder (~> 2.0)
