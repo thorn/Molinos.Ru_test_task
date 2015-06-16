@@ -6,12 +6,15 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand(href="/") Магазин
+      %a.navbar-brand(ui-sref="items") Магазин
     #nav-collapse.collapse.navbar-collapse
       - if signed_in?
         %ul.nav.navbar-nav
           %li(ng-class="{active: state.current.data.feature == 'items'}")
-            %a(ui-sref="items.list")
+            %a(ui-sref="items")
+              Магазин
+          %li(ng-class="{active: state.current.data.feature == 'admin_items'}")
+            %a(ui-sref="admin_items.list")
               Товары и категории
       - if signed_in?
         %ul.nav.navbar-nav.navbar-right

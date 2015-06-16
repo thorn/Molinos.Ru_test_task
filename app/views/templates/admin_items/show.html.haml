@@ -1,6 +1,6 @@
 %ol.breadcrumb
   %li
-    %a(ui-sref="items") Товары и категории
+    %a(ui-sref="admin_items.list") Товары и категории
   %li.active
     {{item.name}}
 
@@ -21,4 +21,3 @@
 
     %div(ng-repeat="photo in item.photos")
       %img.thumbnail.item_photo(ng-src="{{photo.image_url}}")
-%h1 hello world

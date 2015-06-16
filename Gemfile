@@ -69,7 +69,8 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: 'c2ee2e8'
 gem 'rmagick'
 gem 'ancestry'
 gem 'ransack'
-
+gem 'friendly_id'
+gem 'babosa'
 # Angularjs
 gem 'rails-assets-angular'
 gem 'rails-assets-angular-resource'

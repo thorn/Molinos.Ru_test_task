@@ -1,26 +1,40 @@
 window.routes =
-  #-------- Categories and items --------
-  "items":
-    url:         '/items'
-    templateUrl: '/templates/items/index.html'
+  #-------- Admin part --------
+  "admin_items":
+    url:         '/admin/items'
+    templateUrl: '/templates/admin_items/index.html'
     abstract: true
     data:
-      feature: 'items'
+      feature: 'admin_items'
 
-  "items.list":
+  "admin_items.list":
     url:         '/'
     views:
       'item_list':
-        templateUrl: '/templates/items/_item_list.html'
-        controller: 'appItemsCtrl'
+        templateUrl: '/templates/admin_items/_item_list.html'
+        controller: 'appAdminItemsCtrl'
       'categories_list':
-        templateUrl: '/templates/items/_categories_list.html'
+        templateUrl: '/templates/categories/_categories_list.html'
         controller: 'appCategoriesCtrl'
     data:
-      feature: 'items'
+      feature: 'admin_items'
 
-  "items.show":
+  "admin_items.show":
     url:         '/:id'
+    templateUrl: '/templates/admin_items/show.html'
+    controller: 'appAdminItemCtrl'
+    data:
+      feature: 'admin_items'
+
+  #-------- Public part --------
+  "items":
+    url:         '/items'
+    templateUrl: '/templates/items/index.html'
+    controller: 'appItemsCtrl'
+    data:
+      feature: 'items'
+  "items_show":
+    url:         '/items/:id'
     templateUrl: '/templates/items/show.html'
     controller: 'appItemCtrl'
     data:

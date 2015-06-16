@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :items, defaults: { format: 'json' }
+
   root 'application#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
