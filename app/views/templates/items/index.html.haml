@@ -1,7 +1,19 @@
 .row
-  .col-md-3
-    %div(ui-view="categories_list")
-  .col-md-7
-    %div(ui-view="item_list")
   .col-md-12
-    %div(ui-view)
+    %h1 Товары
+    %table.table.table-bordered(ng-show="items.length > 0")
+      %thead
+        %th
+        %th Название
+        %th Цена
+        %th Слаг
+      %tbody
+        %tr(ng-repeat="item in items")
+          %th
+            %img(ng-src="{{item.main_photo.url}}")
+          %td
+            %a(ui-sref="items_show({id: item.slug || item.id })") {{item.name}}
+          %td {{item.price}}
+          %td {{item.slug}}
+    %h2(ng-show="items.length == 0")
+      Нет товаров

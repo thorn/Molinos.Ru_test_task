@@ -1,6 +1,7 @@
 #= require ./common/common
 #= require ./categories/categories
 #= require ./items/items
+#= require ./items/items_public
 #= require ./routes
 
 window.app.controller 'appApplicationCtrl', ['$scope', '$rootScope', '$state', ($scope, $rootScope, $state)->
