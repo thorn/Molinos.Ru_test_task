@@ -41,7 +41,7 @@ window.routes =
       feature: 'items'
 
 window.app.config ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
-  $urlRouterProvider.otherwise("/items/")
+  $urlRouterProvider.otherwise("/items")
   for route, params of window.routes
     $stateProvider.state route, params
 ]
