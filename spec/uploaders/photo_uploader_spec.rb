@@ -28,6 +28,6 @@ describe PhotoUploader do
   end
 
   it "should make the image readable only to the owner and not executable" do
-    expect(@uploader).to have_permissions(0600)
+    expect(@uploader).to have_permissions(0777)
   end
 end
