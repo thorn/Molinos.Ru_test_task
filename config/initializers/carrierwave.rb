@@ -3,5 +3,5 @@ CarrierWave.configure do |config|
     config.enable_processing = false
   end
   config.storage = :file
-  config.permissions = 0600
+  config.permissions = 0777
 end

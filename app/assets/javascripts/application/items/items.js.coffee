@@ -78,7 +78,17 @@ window.app.controller 'appAdminItemsCtrl', ['$scope', '$rootScope', 'Item', 'Cur
 
   $scope.$watch 'current_state.category', (category = {}) ->
     console.log(category)
-    $scope.getItems({'q[category_id_in]': category.id })
+    $scope.getItems({'q[category_id_in][]': $scope.getCategoryIds(category) })
+
+
+  $scope.getCategoryIds = (category, tmp = []) ->
+    tmp.push(category.id) if category.id
+    if category.sub_categories?.length > 0
+      for cat in category.sub_categories
+        $scope.getCategoryIds(cat, tmp)
+    return tmp
+
+
 
   $scope.upload = (files) ->
     NProgress.start()
